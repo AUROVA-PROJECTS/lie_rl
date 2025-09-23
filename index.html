@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Geo-Localization Based on Dynamically Weighted Factor-Graph">
+  <meta property="og:title" content="Geo-Localization Based on Dynamically Weighted Factor-Graph"/>
+  <meta property="og:description" content="Geo-Localization Based on Dynamically Weighted Factor-Graph"/>
+  <meta property="og:url" content="https://aurova-projects.github.io/geo-localization_weighted/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Autonomous Vehicles, Autonomous Navigation, Geo-localization, Geo-referencing, localization, data association, factor graph, pose graph">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Geo-Localization Based on Dynamically Weighted Factor-Graph</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <header class="hero is-small">
+    <div class="hero-body">
+      <div class="header_menu">
+        <a href="https://aurova-projects.github.io/" style="width: 20%;"><img src="static/images/logoAUROVA.png" alt="Logo AUROVA" class="header_image"/></a>
+        <div class="header_index">
+          <a href="https://aurova-projects.github.io/" target="_self" class="home"><i class="fas fa-home" style="transform: scale(0.75) translateY(10px);"></i><strong>AUROVA</strong>&emsp;</a>&emsp;
+          <a href="https://aurova-projects.github.io/team/index.html" target="_self">Team</a>&emsp;
+          <a href="https://aurova-projects.github.io/research/index.html" target="_self">Research</a>&emsp;
+          <a href="https://aurova-projects.github.io/projects/index.html" target="_self">Projects</a>
+        </div>
+        <a href="https://www.ua.es/" target="_blank"  style="width: 22%;"><img src="static/images/logo-ua.png" alt="Logo UA" class="header_image"/></a>
+      </div>
+    </div>
+    <div class="hline"></div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Geo-Localization Based on Dynamically Weighted Factor-Graph</h1>
+            <h1 class="center">IEEE Robotics and Automation Letters + 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Miguel Ángel Muñoz-Bañón,
+              </span>
+              <span class="author-block">
+                Alejandro Olivas,
+              </span>
+              <span class="author-block">
+                Edison Velasco-Sánchez,
+              </span>
+              <br/>
+              <span class="author-block">
+                Francisco A. Candelas,
+              </span>
+              <span class="author-block">
+                Fernando Torres
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Group of Automation, Robotics and Computer Vision (AUROVA) - University of Alicante</span>
+            </div>
+
+            <div class="is-size-8 publication-authors">
+              <span class="author-block"><a href="mailto:miguelangel.munoz@ua.es" target="_blank">miguelangel.munoz@ua.es</a></span>
+            </div>
+
+            <div class="column has-text-centered">
+            <div class="publication-links">
+            
+          
+            <!-- Paper link -->
+            <span class="link-block">
+              <a href="https://ieeexplore.ieee.org/document/10517630" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+
+            <!-- Arxiv link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2311.07301" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/AUROVA-LAB/applications/tree/main/app_geo_localization" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+        <img src="static/images/graphical_abstract.png" alt="Diagram Robust Single Object Tracking and Following by Fusion Strategy" class="center" width="100%"/> 
+        <h2 class="subtitle has-text-left">
+        </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+
+        <div class="content has-text-justified">
+          <h3>
+            Handcrafted feature-based maps obtained from aerial geo-referenced imagery are usually sparse and ambiguous:
+          </h3>
+          <ol>
+            <li><b>Ambiguity mitigation:</b> We provide a factor graph that weights the residuals depending on the information in the data (see pipeline). In this way, when the data is ambiguous, we can hold the localization, providing more weight to the prior trajectory (odometry + GPS-corrected) and less to the data association.</li>
+            <li><b>Sparsity mitigation:</b> When the data is sparse, it is possible to lose data association parts. When this occurs, the SOTA methods converge to the prior (odometry + GPS). However, due to our GPS error estimation, we can hold the localization by the corrected prior (odometry + GPS-corrected).</li>
+          </ol> 
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">Video Presentation</h2> -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Depiction of mitigation for the drawbacks (1) and (2)</h2>
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/z9zCJZAgoUU?si=ZYoFVJdjQ0eiiZHQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container_fig">
+      <div class="column_fig"><img src="static/images/aerial.png" alt="Aerial image"/></div>
+      <div class="column_fig"><img src="static/images/map.png" alt="Global map"/></div>
+      <div class="column_fig"><img src="static/images/Blue_2024.png" alt="Robot BLUE"/></div>
+    </div>
+    <h2 class="subtitle has-text-centered">
+      <b>Experiments setup:</b> (Left) Aerial geo-referenced image - (Center) Ground boundaries map (from aerial image) + 4 drove circuits - (Right) BLUE robot (UGV), used for the experiments
+    </h2>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Paper Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Feature-based geo-localization relies on associating features extracted from aerial imagery with those detected by the vehicle's sensors. This requires that the type of landmarks must be observable from both sources. This lack of variety of feature types generates poor representations that lead to outliers and deviations produced by ambiguities and lack of detections, respectively. To mitigate these drawbacks, in this letter, we present a dynamically weighted factor graph model for the vehicle's trajectory estimation. The weight adjustment in this implementation depends on information quantification in the detections performed using a LiDAR sensor. Also, a prior (GNSS-based) error estimation is included in the model. Then, when the representation becomes ambiguous or sparse, the weights are dynamically adjusted to rely on the corrected prior trajectory, mitigating outliers and deviations in this way. We compare our method against state-of-the-art geo-localization ones in a challenging and ambiguous environment, where we also cause detection losses. We demonstrate mitigation of the mentioned drawbacks where the other methods fail.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Examples</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <source src="static/videos/Follow1_alltrackers.gif"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <source src="static/videos/Follow2_alltrackers.gif"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="gif-carousel" class="carousel results-carousel">
+        <div class="item">
+            <img src="static/videos/Follow1_alltrackers_compress.gif" alt="GIF pedestrian tracking" class="center" width="75%"/>
+        </div>
+        <div class="item">
+            <img src="static/videos/Follow2_alltrackers_compress.gif" alt="GIF pedestrian tracking" class="center" width="75%"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End image carousel -->
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{munoz2024geolocalization,
+          title={Geo-Localization Based on Dynamically Weighted Factor-Graph},
+          author={Muñoz-Bañón, Miguel Ángel and Olivas, Alejandro and Velasco-Sánchez, Edison and Candelas, Francisco A. and Torres, Fernando},
+          journal={IEEE Robotics and Automation Letters},
+          volume={9},
+          number={6},
+          pages={5599--5606},
+          year={2024},
+          doi={10.1109/LRA.2024.3396055},
+          publisher={IEEE}
+        }
+    </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+
+        <div class="content has-text-justified">
+          <h3>
+            Previous related works:
+          </h3>
+          <ul>
+            <li>
+              <span class="link-block">
+                <a href="https://aurova-projects.github.io/geo-localization_self-tunning/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Robust Self-Tuning Data Association for Geo-Referencing Using Lane Markings</span>
+                </a>
+              </span>
+            </li>
+            <li>
+              <span class="link-block">
+                <a href="https://aurova-projects.github.io/osm_path_planning/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>OpenStreetMap-Based Autonomous Navigation With LiDAR Naive-Valley-Path Obstacle Avoidance</span>
+                </a>
+              </span>
+          </li>
+          </ul> 
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="center">
+
+          <a href="http://www.aurova.ua.es/" target="_blank"
+            class="external-link button is-normal is-dark" style="margin-right: 15px;">
+            <span class="icon">
+              <img src="static/images/favicon.png" alt="AUROVA"/>
+            </span>
+          </a>
+
+          <a href="https://github.com/AUROVA-LAB/" target="_blank"
+            class="external-link button is-normal is-dark" style="margin-right: 15px;">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+          </a>
+
+          <a href="https://www.youtube.com/channel/UCdvrdxJmwsuiLrLtZ8XDWZw" target="_blank"
+            class="external-link button is-normal is-dark">
+            <span class="icon">
+              <i class="fab fa-youtube"></i>
+            </span>
+          </a>   
+
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
